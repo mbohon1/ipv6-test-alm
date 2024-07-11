@@ -16,6 +16,19 @@ chmod +x myvps.sh && sudo bash ./myvps.sh
 firewall-cmd --permanent --zone=public --add-port=10000-10003/tcp 
 firewall-cmd --reload 
 
+# Create working folder if it does not exist
+mkdir -p /home/proxy-installer
+
+# Set IPv6 configurations
+sysctl -w net.ipv6.conf.all.proxy_ndp=1
+sysctl -w net.ipv6.conf.default.forwarding=1
+sysctl -w net.ipv6.conf.all.forwarding=1
+sysctl -w net.ipv6.ip_nonlocal_bind=1
+
+# Internal IP and External subnet for IPv6 (example values)
+INTERNAL_IP="139.84.193.73"
+EXTERNAL_SUBNET="2401:c080:2000:117a"
+
 # Check generated proxy file location 
 nano /home/proxy-installer/proxy.txt 
 
