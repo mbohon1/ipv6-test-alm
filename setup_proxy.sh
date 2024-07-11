@@ -43,5 +43,5 @@ echo "Internal IP = $INTERNAL_IP. External subnet for IPv6 = $EXTERNAL_SUBNET"
 # Check generated proxy file location 
 nano /home/proxy-installer/proxy.txt 
 
-# Download generated proxy file (replace 'your_code' with actual code)
-wget https://transfer.sh/your_code/proxy.zip 
+# Download generated proxy file (replace 'your_actual_code' with actual code)
+wget https://transfer.sh/your_actual_code/proxy.zip 
