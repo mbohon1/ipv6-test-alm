@@ -19,6 +19,9 @@ firewall-cmd --reload
 # Create working folder if it does not exist
 if [ ! -d "/home/proxy-installer" ]; then
     mkdir -p /home/proxy-installer
+    echo "Created directory /home/proxy-installer"
+else
+    echo "Directory /home/proxy-installer already exists"
 fi
 
 # Set IPv6 configurations
